@@ -2,7 +2,7 @@ var player1 = new player("player1", 0);
 var player2 = new player("player2", 0);
 $(document).ready(function() {
 
-  $(".firstPlayer #roll").click(function(event) {
+  $(".firstPlayer #firstRoll").click(function(event) {
     event.preventDefault();
 
     //var player1 = new player("player1", 0, 0);
@@ -13,14 +13,19 @@ $(document).ready(function() {
     $(".firstPlayer span").text(turn);
   });
 
-  $(".firstPlayer #total").click(function(event) {
+  $("#firstTotal").click(function(event) {
     player1.overallTotal();
     console.log(player1.totalScore);
     $(".firstPlayer p").text(player1.totalScore);
+    document.getElementById("firstRoll").disabled = true;
+    document.getElementById("firstTotal").disabled = true;
+    document.getElementById("secondRoll").disabled = false;
+    document.getElementById("secondTotal").disabled = false;
     turn = 0;
+    $(".firstPlayer span").text(turn);
   });
 
-  $(".secondPlayer #roll").click(function(event) {
+  $(".secondPlayer #secondRoll").click(function(event) {
     event.preventDefault();
     //var player2 = new player("player2", 0, 0);
     //window.player2 = player2;
@@ -31,11 +36,16 @@ $(document).ready(function() {
 
   });
 
-  $(".secondPlayer #total").click(function(event) {
+  $("#secondTotal").click(function(event) {
     player2.overallTotal();
     console.log(player2.totalScore);
     $(".secondPlayer p").text(player2.totalScore);
+    document.getElementById("secondRoll").disabled = true;
+    document.getElementById("secondTotal").disabled = true;
+    document.getElementById("firstRoll").disabled = false;
+    document.getElementById("firstTotal").disabled = false;
     turn = 0;
+    $(".secondPlayer span").text(turn);
   });
 });
 
@@ -43,13 +53,13 @@ $(document).ready(function() {
 //back end logic
 turn = 0;
 
-function player(name, total, turn) {
+function player(name, total) {
   this.playerName = name;
   this.totalScore = total;
 };
 
 player.prototype.turnScore = function() {
-  var y = diceRoll();
+  var y = Math.floor(Math.random() * (7 - 1)) + 1;;
   window.y=y;
   return turn+=y ;
 }
@@ -57,11 +67,4 @@ player.prototype.turnScore = function() {
 player.prototype.overallTotal = function() {
   this.totalScore += turn;
   return this.totalScore;
-}
-
-function diceRoll() {
-  min = Math.ceil(7);
-  max = Math.floor(1);
-  var y = Math.floor(Math.random() * (max - min)) + min;
-  return y;
 }
