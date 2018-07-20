@@ -1,44 +1,47 @@
+var player1 = new player("player1", 0);
+var player2 = new player("player2", 0);
 $(document).ready(function() {
 
-$(".firstPlayer #roll").click(function(event){
-  event.preventDefault();
+  $(".firstPlayer #roll").click(function(event) {
+    event.preventDefault();
 
-  var player1 = new player("player1");
-  window.player1 = player1;
+    //var player1 = new player("player1", 0, 0);
+    //window.player1 = player1;
     player1.turnScore();
     console.log(turn);
-});
+  });
 
-$(".firstPlayer #total").click(function(event){
-  player1.overallTotal();
-  console.log(total);
-  turn = 0;
-});
+  $(".firstPlayer #total").click(function(event) {
+    player1.overallTotal();
+    console.log(player1.totalScore);
+    turn = 0;
+  });
 
-// $(".secondPlayer #roll").click(function(event){
-//   event.preventDefault();
-//
-//   var player2 = new player("player2");
-//   window.player2 = player2;
-//     player1.turnScore();
-//     console.log(turn);
-//     turn=0;
-// });
-//
-// $(".secondPlayer #total").click(function(event){
-//   player2.overallTotal();
-//   console.log(total);
-// });
+  $(".secondPlayer #roll").click(function(event) {
+    event.preventDefault();
+
+    //var player2 = new player("player2", 0, 0);
+    //window.player2 = player2;
+    //$(".secondPlayer span").text(turn);
+    player2.turnScore();
+    console.log(turn);
+
+  });
+
+  $(".secondPlayer #total").click(function(event) {
+    player2.overallTotal();
+    console.log(player2.totalScore);
+    turn = 0;
+  });
 });
 
 
 //back end logic
-var total = 0;
-var turn = 0;
+turn = 0;
 
-
-function player(name) {
+function player(name, total, turn) {
   this.playerName = name;
+  this.totalScore = total;
 };
 
 player.prototype.turnScore = function() {
@@ -47,11 +50,11 @@ player.prototype.turnScore = function() {
 }
 
 player.prototype.overallTotal = function() {
-  total += turn;
-  return total;
+  this.totalScore += turn;
+  return this.totalScore;
 }
 
-function diceRoll(){
+function diceRoll() {
   min = Math.ceil(7);
   max = Math.floor(1);
   var y = Math.floor(Math.random() * (max - min)) + min;
