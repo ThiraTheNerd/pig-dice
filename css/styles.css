@@ -1,7 +1,21 @@
 .col-md-5{
-  margin-top: 20%;
+  padding-top: 20%;
+  font-size: 30px;
+}
+
+button{
+font-size: 20px;
 }
 
 .firstPlayer{
   padding-left: 5%;
+}
+
+body{
+  text-align: center;
+}
+
+#dice{
+  font-size: 50px;
+  padding-top: 30%;
 }
