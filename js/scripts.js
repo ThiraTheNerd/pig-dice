@@ -2,18 +2,25 @@ var player1 = new player("player1", 0);
 var player2 = new player("player2", 0);
 $(document).ready(function() {
 
-  $(".firstPlayer #firstRoll").click(function(event) {
-    event.preventDefault();
-
-    //var player1 = new player("player1", 0, 0);
-    //window.player1 = player1;
-    player1.turnScore();
-    console.log(turn);
-    $("#dice").text(y);
-    $(".firstPlayer span").text(turn);
+  $(".firstPlayer #firstRoll").click(function() {
+    if (y == 1) {
+      turn = 0;
+      player1.overallTotal;
+      alert("player rolled 1");
+      $(".firstPlayer span").text(turn);
+      document.getElementById("firstRoll").disabled = true;
+      document.getElementById("firstTotal").disabled = true;
+      document.getElementById("secondRoll").disabled = false;
+      document.getElementById("secondTotal").disabled = false;
+    } else {
+      player1.turnScore();
+      console.log(turn);
+      $("#dice").text(y);
+      $(".firstPlayer span").text(turn);
+    }
   });
 
-  $("#firstTotal").click(function(event) {
+  $("#firstTotal").click(function() {
     player1.overallTotal();
     console.log(player1.totalScore);
     $(".firstPlayer p").text(player1.totalScore);
@@ -25,18 +32,25 @@ $(document).ready(function() {
     $(".firstPlayer span").text(turn);
   });
 
-  $(".secondPlayer #secondRoll").click(function(event) {
-    event.preventDefault();
-    //var player2 = new player("player2", 0, 0);
-    //window.player2 = player2;
+  $(".secondPlayer #secondRoll").click(function() {
+    if (y == 1) {
+      turn = 0;
+      player1.overallTotal;
+      alert("player rolled 1");
+      $(".secondPlayer span").text(turn);
+      document.getElementById("firstRoll").disabled = false;
+      document.getElementById("firstTotal").disabled = false;
+      document.getElementById("secondRoll").disabled = true;
+      document.getElementById("secondTotal").disabled = true;
+    } else {
     player2.turnScore();
     console.log(turn);
-    console.log(y);
+    $("#dice").text(y);
     $(".secondPlayer span").text(turn);
-
+}
   });
 
-  $("#secondTotal").click(function(event) {
+  $("#secondTotal").click(function() {
     player2.overallTotal();
     console.log(player2.totalScore);
     $(".secondPlayer p").text(player2.totalScore);
@@ -51,7 +65,9 @@ $(document).ready(function() {
 
 
 //back end logic
-turn = 0;
+var turn = 0;
+var y = 0;
+
 
 function player(name, total) {
   this.playerName = name;
@@ -59,9 +75,9 @@ function player(name, total) {
 };
 
 player.prototype.turnScore = function() {
-  var y = Math.floor(Math.random() * (7 - 1)) + 1;;
-  window.y=y;
-  return turn+=y ;
+  y = Math.floor(Math.random() * (7 - 1)) + 1;;
+  window.y = y;
+  return turn += y;
 }
 
 player.prototype.overallTotal = function() {
