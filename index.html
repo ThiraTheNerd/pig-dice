@@ -16,11 +16,17 @@
     <div class="header">
       <h1>Pig Dice</h1>
     </div>
+    <div class="instructions">
+      <p>Pig dice game is played with a single six-sided die and players are allowed to make any number of rolls in each turn. After each roll the dice value is added to their score for that turn. After each roll player can decide whether to stop rolling
+        and claim the total turn score or continue rolling. If they roll a 1 then they lose all points scored in a particular turn and turn is then passed to the opponent. This has no impact on their overall score. If players decide to stop rolling, they
+        get the points scored so far which is added to their overall score.</p>
+    </div>
     <div class="row">
       <div class="firstPlayer col-md-5">
-        <p></p>
-        <button type="button" id="firstRoll">Roll</button>
-        <button type="button" id="firstTotal">Hold</button><br>
+
+        <p id="player1Display"></p>
+        <button type="button" id="firstRoll" class="btn btn-default">Roll</button>
+        <button type="button" id="firstTotal" class="btn btn-default">Hold</button><br>
         <span></span>
 
       </div>
@@ -29,12 +35,26 @@
       </div>
 
       <div class="secondPlayer col-md-5">
-        <p></p>
-        <button type="button" id="secondRoll" disabled>Roll</button>
-        <button type="button" id="secondTotal" disabled>Hold</button><br>
+        <p id="player2Display"></p>
+        <button type="button" id="secondRoll" class="btn btn-default" disabled>Roll</button>
+        <button type="button" id="secondTotal" class="btn btn-default" disabled>Hold</button><br>
         <span></span>
 
+
       </div>
+    </div>
+    <div class="footer row">
+      <div class="col-md-5">
+        <p>Player 1</p>
+      </div>
+      <div class="col-md-2">
+
+      </div>
+      <div class="col-md-5">
+        <p>Player 2</p>
+
+      </div>
+
     </div>
   </div>
 </body>

@@ -19,7 +19,7 @@ $(document).ready(function() {
   $("#firstTotal").click(function() {
     player1.overallTotal();
     console.log(player1.totalScore);
-    $(".firstPlayer p").text(player1.totalScore);
+    $("#player1Display").text(player1.totalScore);
     switchPlayer2();
     turn = 0;
     $(".firstPlayer span").text(turn);
@@ -44,7 +44,7 @@ $(document).ready(function() {
   $("#secondTotal").click(function() {
     player2.overallTotal();
     console.log(player2.totalScore);
-    $(".secondPlayer p").text(player2.totalScore);
+    $("#player2Display").text(player2.totalScore);
     turn = 0;
     switchPlayer1();
     $(".secondPlayer span").text(turn);
