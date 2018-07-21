@@ -1,9 +1,7 @@
 .col-md-5{
-  /* padding-top: 20%; */
-  /* text-align: center; */
   font-size: 30px;
-  padding-bottom: 20%;
-  background-color: rgb(5, 0, 255);
+  font-family: 'Righteous', cursive;
+  font-size: 50px;
 }
 
 button{
@@ -12,7 +10,12 @@ font-size: 20px;
 
 /* .firstPlayer{
   padding-left: 5%;
-
+  font-family: 'Black Ops One', cursive;
+  font-family: 'Cabin Sketch', cursive;
+  font-family: 'Fredericka the Great', cursive;
+  font-family: 'Monoton', cursive;
+  font-family: 'Righteous', cursive;
+  font-family: 'Shojumaru', cursive;
 } */
 
 body{
@@ -20,7 +23,7 @@ body{
 }
 
 #dice{
-  font-size: 50px;
+  font-size: 60px;
   padding-top: 30%;
 }
 body{
@@ -31,20 +34,33 @@ body{
   max-width: 70%;
   margin-left: auto;
   margin-right: auto;
+  font-family: 'Ubuntu Mono', monospace;
   /* text-align: center; */
 }
 
 
 .footer{
-  background-color: #f60000;
-  max-height: 60px;
+  max-height: 100px;
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
 .header{
-  height: 120px;
+  height: 200px;
   width:100%;
   background-color: rgb(95, 255, 1);
+font-family: 'Fredericka the Great', cursive;
+}
+
+.header h1{
+  font-size: 100px;
+  padding-top: 20px;
+}
+
+.header img {
+  float: right;
+  max-width: 150px;
+  margin-left: 20px;
+  margin-top: 20px;
 }

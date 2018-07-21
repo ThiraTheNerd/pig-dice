@@ -1,5 +1,6 @@
 //front end logic
 $(document).ready(function() {
+  initialDisplay();
 
   $(".firstPlayer #firstRoll").click(function() {
     player1.turnScore();
@@ -34,7 +35,6 @@ $(document).ready(function() {
       $(".secondPlayer span").text(turn);
       switchPlayer1()
     } else {
-
       console.log(turn);
       $("#dice").text(y);
       $(".secondPlayer span").text(turn);
@@ -86,4 +86,11 @@ function switchPlayer2() {
   document.getElementById("firstTotal").disabled = true;
   document.getElementById("secondRoll").disabled = false;
   document.getElementById("secondTotal").disabled = false;
+}
+
+function initialDisplay() {
+  $(".firstPlayer span").text(turn);
+  $(".secondPlayer span").text(turn);
+  $("#player1Display").text(player1.totalScore);
+  $("#player2Display").text(player2.totalScore);
 }
