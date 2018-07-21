@@ -8,26 +8,15 @@ button{
 font-size: 20px;
 }
 
-/* .firstPlayer{
-  padding-left: 5%;
-  font-family: 'Black Ops One', cursive;
-  font-family: 'Cabin Sketch', cursive;
-  font-family: 'Fredericka the Great', cursive;
-  font-family: 'Monoton', cursive;
-  font-family: 'Righteous', cursive;
-  font-family: 'Shojumaru', cursive;
-} */
-
 body{
   text-align: center;
+  overflow: hidden;
+  font-family: 'Black Ops One', cursive;
 }
 
 #dice{
-  font-size: 60px;
+  font-size: 80px;
   padding-top: 30%;
-}
-body{
-  overflow: hidden;
 }
 
 .instructions{
@@ -35,9 +24,7 @@ body{
   margin-left: auto;
   margin-right: auto;
   font-family: 'Ubuntu Mono', monospace;
-  /* text-align: center; */
 }
-
 
 .footer{
   max-height: 100px;
@@ -50,7 +37,7 @@ body{
   height: 200px;
   width:100%;
   background-color: rgb(95, 255, 1);
-font-family: 'Fredericka the Great', cursive;
+  font-family: 'Fredericka the Great', cursive;
 }
 
 .header h1{

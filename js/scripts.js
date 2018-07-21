@@ -18,12 +18,17 @@ $(document).ready(function() {
   });
 
   $("#firstTotal").click(function() {
+    if(player1.totalScore>=100){
+      alert("Player 1 Wins");
+      initialDisplay();
+    }else{
     player1.overallTotal();
     console.log(player1.totalScore);
     $("#player1Display").text(player1.totalScore);
     switchPlayer2();
     turn = 0;
     $(".firstPlayer span").text(turn);
+  }
   });
 
   $(".secondPlayer #secondRoll").click(function() {
@@ -42,12 +47,17 @@ $(document).ready(function() {
   });
 
   $("#secondTotal").click(function() {
+    if(player2.totalScore>=100){
+      alert("Player 2 Wins");
+      initialDisplay();
+    }else{
     player2.overallTotal();
     console.log(player2.totalScore);
     $("#player2Display").text(player2.totalScore);
     turn = 0;
     switchPlayer1();
     $(".secondPlayer span").text(turn);
+  }
   });
 });
 
@@ -89,6 +99,9 @@ function switchPlayer2() {
 }
 
 function initialDisplay() {
+  turn=0;
+  player1.totalScore=0;
+  player2.totalScore=0;
   $(".firstPlayer span").text(turn);
   $(".secondPlayer span").text(turn);
   $("#player1Display").text(player1.totalScore);
