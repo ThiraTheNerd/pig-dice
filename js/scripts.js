@@ -1,19 +1,15 @@
-var player1 = new player("player1", 0);
-var player2 = new player("player2", 0);
+//front end logic
 $(document).ready(function() {
 
   $(".firstPlayer #firstRoll").click(function() {
+    player1.turnScore();
     if (y == 1) {
       turn = 0;
       player1.overallTotal;
       alert("player rolled 1");
       $(".firstPlayer span").text(turn);
-      document.getElementById("firstRoll").disabled = true;
-      document.getElementById("firstTotal").disabled = true;
-      document.getElementById("secondRoll").disabled = false;
-      document.getElementById("secondTotal").disabled = false;
+      switchPlayer2();
     } else {
-      player1.turnScore();
       console.log(turn);
       $("#dice").text(y);
       $(".firstPlayer span").text(turn);
@@ -24,41 +20,33 @@ $(document).ready(function() {
     player1.overallTotal();
     console.log(player1.totalScore);
     $(".firstPlayer p").text(player1.totalScore);
-    document.getElementById("firstRoll").disabled = true;
-    document.getElementById("firstTotal").disabled = true;
-    document.getElementById("secondRoll").disabled = false;
-    document.getElementById("secondTotal").disabled = false;
+    switchPlayer2();
     turn = 0;
     $(".firstPlayer span").text(turn);
   });
 
   $(".secondPlayer #secondRoll").click(function() {
+    player2.turnScore();
     if (y == 1) {
       turn = 0;
       player1.overallTotal;
       alert("player rolled 1");
       $(".secondPlayer span").text(turn);
-      document.getElementById("firstRoll").disabled = false;
-      document.getElementById("firstTotal").disabled = false;
-      document.getElementById("secondRoll").disabled = true;
-      document.getElementById("secondTotal").disabled = true;
+      switchPlayer1()
     } else {
-    player2.turnScore();
-    console.log(turn);
-    $("#dice").text(y);
-    $(".secondPlayer span").text(turn);
-}
+
+      console.log(turn);
+      $("#dice").text(y);
+      $(".secondPlayer span").text(turn);
+    }
   });
 
   $("#secondTotal").click(function() {
     player2.overallTotal();
     console.log(player2.totalScore);
     $(".secondPlayer p").text(player2.totalScore);
-    document.getElementById("secondRoll").disabled = true;
-    document.getElementById("secondTotal").disabled = true;
-    document.getElementById("firstRoll").disabled = false;
-    document.getElementById("firstTotal").disabled = false;
     turn = 0;
+    switchPlayer1();
     $(".secondPlayer span").text(turn);
   });
 });
@@ -67,7 +55,8 @@ $(document).ready(function() {
 //back end logic
 var turn = 0;
 var y = 0;
-
+var player1 = new player("player1", 0);
+var player2 = new player("player2", 0);
 
 function player(name, total) {
   this.playerName = name;
@@ -83,4 +72,18 @@ player.prototype.turnScore = function() {
 player.prototype.overallTotal = function() {
   this.totalScore += turn;
   return this.totalScore;
+}
+
+function switchPlayer1() {
+  document.getElementById("secondRoll").disabled = true;
+  document.getElementById("secondTotal").disabled = true;
+  document.getElementById("firstRoll").disabled = false;
+  document.getElementById("firstTotal").disabled = false;
+}
+
+function switchPlayer2() {
+  document.getElementById("firstRoll").disabled = true;
+  document.getElementById("firstTotal").disabled = true;
+  document.getElementById("secondRoll").disabled = false;
+  document.getElementById("secondTotal").disabled = false;
 }
