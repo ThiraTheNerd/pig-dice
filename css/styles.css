@@ -39,6 +39,7 @@ body{
   width:100%;
   background-color: #5fff01;
   font-family: 'Fredericka the Great', cursive;
+  text-align: center;
 }
 
 .header h1{
@@ -46,9 +47,24 @@ body{
   padding-top: 20px;
 }
 
-.header img {
+.header #right {
   float: right;
   max-width: 189px;
   margin-right: 20px;
   margin-top: 20px;
+}
+
+.header #left {
+  float: left;
+  max-width: 189px;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.offTurn{
+  opacity: 0.4;
+}
+
+.container-fluid{
+  padding: 0;
 }

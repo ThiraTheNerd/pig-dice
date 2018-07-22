@@ -15,8 +15,9 @@
 <body>
   <div class="container-fluid">
     <div class="header">
-      <img src="img/pig1.png" alt="">
-      <h1>Pig Dice</h1>
+      <img src="img/pig2.png" alt="pig" id="left">
+      <img src="img/pig1.png" alt="pig" id="right">
+      <h1>Pig Dice</h1>      
     </div>
     <div class="instructions">
       <p>Pig dice game is played with a single six-sided die and players are allowed to make any number of rolls in each turn. After each roll the dice value is added to their score for that turn. After each roll player can decide whether to stop rolling
@@ -36,7 +37,7 @@
         <p id="dice"></p>
       </div>
 
-      <div class="secondPlayer col-md-5">
+      <div class="secondPlayer col-md-5 offTurn">
         <p id="player2Display"></p>
         <button type="button" id="secondRoll" class="btn btn-default btn-large" disabled>Roll</button>
         <button type="button" id="secondTotal" class="btn btn-default btn-large" disabled>Hold</button><br>
@@ -46,13 +47,13 @@
       </div>
     </div>
     <div class="footer row">
-      <div class="col-md-5">
+      <div class="col-md-5 firstPlayer">
         <p>Player 1</p>
       </div>
       <div class="col-md-2">
 
       </div>
-      <div class="col-md-5">
+      <div class="col-md-5 secondPlayer offTurn">
         <p>Player 2</p>
 
       </div>
