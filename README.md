@@ -1,7 +1,7 @@
 # pig-dice
 Moringa school week 4 Friday IP to create a page for the pig dice game.
 
-#### By James Kageni
+#### Authors
 -[ThiraTheNerd](https://github.com/ThiraTheNerd)
 ## Description
 this is a dice game where the aim is to be first to reach 100 points. the players take turns rolling the dice. the player rolls as many times as he choose as long as the don't get a one. if the die lands on one the turn score is reset to zero and the players switch. the numbers on the face are added up to the turn score. the player can 'hold' and their turn total is added to their points total. the reset of the turn total does not affect the overall total points.
